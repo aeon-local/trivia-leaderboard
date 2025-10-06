@@ -21,7 +21,7 @@ graph TD
     E[Scheduled Query] -->|Actualiza leaderboard cada 5 min| F[Table leaderboard]
     B -->|GET /leaderboard| F
     G[Jenkins VM] -->|CI/CD| B
-```
+
 
 ## 🧩 Componentes principales
 | Componente | Descripción |
