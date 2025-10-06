@@ -12,16 +12,6 @@ Al final tendrás:
 - Infraestructura reproducible (Terraform).
 - Dashboard de puntajes en BigQuery.
 
-## ⚙️ Arquitectura general
-```mermaid
-graph TD
-    A[Usuario - Frontend o CURL] -->|POST /answer| B[Cloud Run (FastAPI)]
-    B -->|Insert Rows JSON| C[BigQuery: Table responses]
-    D[Terraform] -->|Crea dataset, tablas y jobs| C
-    E[Scheduled Query] -->|Actualiza leaderboard cada 5 min| F[Table leaderboard]
-    B -->|GET /leaderboard| F
-    G[Jenkins VM] -->|CI/CD| B
-
 
 ## 🧩 Componentes principales
 | Componente | Descripción |
