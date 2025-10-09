@@ -13,7 +13,10 @@ resource "google_bigquery_table" "responses" {
     {name="response_time_ms", type="INT64", mode="REQUIRED"},
     {name="ts", type="TIMESTAMP", mode="REQUIRED"}
   ])
-  time_partitioning { type = "DAY"; field = "ts" }
+  time_partitioning { 
+    type = "DAY"
+    field = "ts"
+  }
 }
 
 # Tabla destino del leaderboard (sobrescrita por scheduled query)
